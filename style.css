@@ -1,0 +1,362 @@
+/* --- CONFIGURACIÓN BÁSICA --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth; /* Desplazamiento suave al hacer clic en el menú */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fondo oscuro teatral */
+    color: #e0e0e0; /* Texto claro */
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fuente elegante para títulos */
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+}
+
+/* --- LAYOUT PRINCIPAL (Flexbox) --- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    width: 260px;
+    background-color: #000000;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border-right: 1px solid #333;
+    flex-shrink: 0; /* Evita que la barra se encoja */
+}
+
+.profile-name h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #d4af37; /* Color dorado suave */
+}
+
+.profile-name p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 3rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.sidebar ul li {
+    margin-bottom: 1.5rem;
+}
+
+.sidebar ul li a {
+    font-size: 1.1rem;
+    color: #bbb;
+    display: block;
+}
+
+.sidebar ul li a:hover {
+    color: #d4af37; /* Dorado al pasar el mouse */
+    transform: translateX(5px);
+}
+
+.sidebar-footer {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* --- CONTENIDO PRINCIPAL --- */
+.main-content {
+    flex-grow: 1; /* Ocupa el resto del espacio */
+    background-color: #1a1a1a;
+}
+
+.section-padding {
+    padding: 4rem 10%;
+}
+
+/* --- HERO IMAGE (Imagen grande) --- */
+.hero {
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    /* Aquí debes poner tu foto principal de fondo */
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('./img/mesaDandyMortal1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* --- INTRODUCCIÓN --- */
+#intro h2 {
+    border-bottom: 2px solid #d4af37;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.lead {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+/* --- PROYECTOS --- */
+.project-item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+/* Invierte el orden para proyectos pares (imagen derecha, texto izquierda) */
+.project-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.project-image {
+    flex: 1;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s;
+}
+
+.project-image img:hover {
+    transform: scale(1.02);
+}
+
+.project-info {
+    flex: 1;
+}
+
+.project-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #d4af37;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+    margin: 2rem 0;
+}
+
+/* --- CONTACTO & FOOTER --- */
+.contact-section {
+    background-color: #121212;
+    text-align: center;
+}
+
+.contact-details {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+}
+
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .sidebar ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 1rem;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .project-item, .project-item.reverse {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+/* --- ESTILOS NUEVOS PARA PÁGINAS DE PROYECTO --- */
+
+/* Cabecera compacta para proyectos (diferente al Hero del home) */
+.project-header {
+    background-color: #000;
+    padding: 3rem 10%;
+    border-bottom: 1px solid #333;
+}
+.project-header h1 {
+    font-size: 3rem;
+    color: #d4af37;
+}
+.subtitle {
+    font-size: 1.2rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Layout Video + Sinopsis */
+.project-top-grid {
+    display: grid;
+    grid-template-columns: 3fr 2fr; /* El video ocupa más espacio que el texto */
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Contenedor Responsive de Youtube (Aspect Ratio 16:9) */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    background: #000;
+}
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.project-synopsis h2 {
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #333;
+    display: inline-block;
+}
+
+/* Ficha Técnica (Estilo Playbill/Programa de mano) */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.team-member h4 {
+    color: #d4af37;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    margin-bottom: 0.2rem;
+}
+.team-member p {
+    font-size: 0.95rem;
+    color: #ccc;
+}
+
+/* Galería de Imágenes (Grid simple) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.gallery-grid img {
+    width: 100%;
+    height: 250px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Recorta la imagen para que no se deforme */
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+    opacity: 0.8;
+}
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* Botón Volver */
+.back-nav {
+    margin-top: 4rem;
+    text-align: center;
+}
+.btn-back {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #d4af37;
+    color: #d4af37;
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+.btn-back:hover {
+    background-color: #d4af37;
+    color: #000;
+}
+
+/* Estilo para el link activo en sidebar */
+.sidebar ul li a.active {
+    color: #d4af37;
+    font-weight: bold;
+    border-left: 3px solid #d4af37;
+    padding-left: 10px;
+    margin-left: -13px; /* Compensa el borde para alinear */
+}
+
+/* Ajustes Responsive para la nueva página */
+@media (max-width: 900px) {
+    .project-top-grid {
+        grid-template-columns: 1fr; /* Columna única en tablets/móviles */
+    }
+    .project-header h1 {
+        font-size: 2rem;
+    }
+}
