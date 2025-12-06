@@ -346,7 +346,6 @@ footer {
 .sidebar ul li a.active {
     color: #d4af37;
     font-weight: bold;
-    border-left: 3px solid #d4af37;
     padding-left: 10px;
     margin-left: -13px; /* Compensa el borde para alinear */
 }
@@ -358,5 +357,89 @@ footer {
     }
     .project-header h1 {
         font-size: 2rem;
+    }
+}
+/* --- ESTILOS DEL MENÚ HAMBURGUESA (MÓVIL) --- */
+
+/* Por defecto (escritorio), ocultamos el botón y el overlay */
+.menu-toggle, .menu-overlay {
+    display: none;
+}
+
+/* Solo aplicamos esto en pantallas pequeñas */
+@media (max-width: 768px) {
+
+    /* 1. Estilo del Botón Hamburguesa */
+    .menu-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px; /* Botón a la derecha */
+        background-color: #000;
+        color: #d4af37; /* Dorado */
+        border: 2px solid #d4af37;
+        font-size: 1.8rem;
+        padding: 5px 12px;
+        border-radius: 4px;
+        cursor: pointer;
+        z-index: 1001;
+        transition: 0.3s;
+    }
+
+    .menu-toggle:hover {
+        background-color: #d4af37;
+        color: #000;
+    }
+
+    /* 2. Rediseño del Sidebar para Móvil (Off-canvas) */
+    .sidebar {
+        position: fixed;
+        top: 0;
+        left: -100%; /* Oculto a la izquierda */
+        width: 280px; /* Ancho fijo */
+        height: 100vh;
+        z-index: 1000;
+        transition: left 0.4s ease; /* Animación suave */
+        box-shadow: 5px 0 15px rgba(0,0,0,0.5);
+        /* Restauramos el estilo vertical que cambiamos antes */
+        text-align: left;
+        padding-top: 4rem; /* Espacio para no chocar con el botón si lo pones a la izq */
+    }
+
+    /* Clase para mostrar el menú */
+    .sidebar.active {
+        left: 0; /* Aparece en pantalla */
+    }
+
+    /* Arreglamos la lista para que vuelva a ser vertical */
+    .sidebar ul {
+        display: block;
+        margin-top: 0;
+    }
+
+    .sidebar ul li {
+        margin-bottom: 1.5rem;
+    }
+
+    /* 3. Fondo oscuro (Overlay) */
+    .menu-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.7); /* Oscurece el fondo */
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+        transition: 0.3s;
+        backdrop-filter: blur(3px); /* Efecto borroso bonito */
+    }
+
+    /* Mostrar overlay cuando el menú está activo */
+    .menu-overlay.active {
+        opacity: 1;
+        visibility: visible;
     }
 }
