@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentSectionId = '';
         const scrollPosition = window.scrollY;
 
-        // 1. DETECCIÓN DE SECCIÓN (Solo funciona si estamos en Index.html donde hay <section id="...">)
+        // 1. DETECCIÓN DE SECCIÓN (Solo funciona si estamos en index.html donde hay <section id="...">)
         if (sections.length > 0) {
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.forEach(link => {
             link.classList.remove('active');
 
-            const href = link.getAttribute('href'); // ej: "Index.html#intro" o "proyecto1.html"
-            const currentPath = window.location.pathname; // ej: "/proyecto1.html" o "/Index.html"
-            const isHomePage = currentPath.endsWith('Index.html') || currentPath === '/' || currentPath.endsWith('/');
+            const href = link.getAttribute('href'); // ej: "index.html#intro" o "proyecto1.html"
+            const currentPath = window.location.pathname; // ej: "/proyecto1.html" o "/index.html"
+            const isHomePage = currentPath.endsWith('index.html') || currentPath === '/' || currentPath.endsWith('/');
 
             // --- CASO A: Estamos en una página de Proyecto ---
             if (!isHomePage) {
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // --- CASO B: Estamos en el Home (Index.html) ---
+            // --- CASO B: Estamos en el Home (index.html) ---
             else {
                 if (currentSectionId && href.includes('#' + currentSectionId)) {
                     link.classList.add('active');
