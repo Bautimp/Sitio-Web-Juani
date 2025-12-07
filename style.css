@@ -47,10 +47,21 @@ a {
     flex-shrink: 0; /* Evita que la barra se encoja */
 }
 
+.profile-image {
+    width: 130px;           /* Tamaño fijo */
+    height: 130px;
+    border-radius: 50%;     /* La hace perfectamente redonda */
+    object-fit: cover;      /* Asegura que la foto no se deforme si no es cuadrada */
+    display: block;         /* Necesario para centrarla */
+    margin: 0 auto 1.5rem auto; /* Centrado horizontal y margen abajo */
+    border: 3px solid #D43737FF; /* Borde del color del tema */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); /* Sombra suave para que resalte */
+}
+
 .profile-name h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
-    color: #d4af37; /* Color dorado suave */
+    color: #D43737FF; /* Color dorado suave */
 }
 
 .profile-name p {
@@ -75,7 +86,7 @@ a {
 }
 
 .sidebar ul li a:hover {
-    color: #d4af37; /* Dorado al pasar el mouse */
+    color: #D43737FF; /* Dorado al pasar el mouse */
     transform: translateX(5px);
 }
 
@@ -92,6 +103,13 @@ a {
 
 .section-padding {
     padding: 4rem 10%;
+}
+
+.fondo-section{
+    background-color: #0e0e0e;
+    padding: 4rem 10%;
+    border-radius: 8px;
+
 }
 
 /* --- HERO IMAGE (Imagen grande) --- */
@@ -121,7 +139,7 @@ a {
 
 /* --- INTRODUCCIÓN --- */
 #intro h2 {
-    border-bottom: 2px solid #d4af37;
+    border-bottom: 2px solid #D43737FF;
     display: inline-block;
     margin-bottom: 1.5rem;
 }
@@ -168,7 +186,7 @@ a {
 .project-info h3 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #d4af37;
+    color: #D43737FF;
 }
 
 hr {
@@ -243,7 +261,7 @@ footer {
 }
 .project-header h1 {
     font-size: 3rem;
-    color: #d4af37;
+    color: #D43737FF;
 }
 .subtitle {
     font-size: 1.2rem;
@@ -292,7 +310,7 @@ footer {
     margin-top: 2rem;
 }
 .team-member h4 {
-    color: #d4af37;
+    color: #D43737FF;
     font-family: 'Playfair Display', serif;
     font-size: 1.1rem;
     margin-bottom: 0.2rem;
@@ -332,19 +350,19 @@ footer {
 .btn-back {
     display: inline-block;
     padding: 10px 20px;
-    border: 1px solid #d4af37;
-    color: #d4af37;
+    border: 1px solid #D43737FF;
+    color: #D43737FF;
     border-radius: 4px;
     transition: all 0.3s;
 }
 .btn-back:hover {
-    background-color: #d4af37;
+    background-color: #D43737FF;
     color: #000;
 }
 
 /* Estilo para el link activo en sidebar */
 .sidebar ul li a.active {
-    color: #d4af37;
+    color: #D43737FF;
     font-weight: bold;
     padding-left: 10px;
     margin-left: -13px; /* Compensa el borde para alinear */
@@ -376,8 +394,8 @@ footer {
         top: 20px;
         right: 20px; /* Botón a la derecha */
         background-color: #000;
-        color: #d4af37; /* Dorado */
-        border: 2px solid #d4af37;
+        color: #D43737FF; /* Dorado */
+        border: 2px solid #D43737FF;
         font-size: 1.8rem;
         padding: 5px 12px;
         border-radius: 4px;
@@ -387,7 +405,7 @@ footer {
     }
 
     .menu-toggle:hover {
-        background-color: #d4af37;
+        background-color: #D43737FF;
         color: #000;
     }
 
@@ -442,4 +460,27 @@ footer {
         opacity: 1;
         visibility: visible;
     }
+}
+/* --- BOTONES "VER MÁS" --- */
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 25px;
+    border: 1px solid #D43737FF;
+    color: #D43737FF;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+/* Animación al pasar el mouse (Hover) */
+.project-link:hover {
+    background-color: #D43737FF;   /* Se rellena de dorado */
+    color: #000000;              /* El texto cambia a negro para leerse bien */
+    transform: translateY(-3px); /* El botón "flota" un poquito hacia arriba */
+    box-shadow: 0 4px 15px rgba(212, 55, 55, 0.4); /* Un brillo dorado suave abajo */
 }
