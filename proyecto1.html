@@ -38,7 +38,7 @@
 
         <header class="project-header">
             <div class="header-content">
-                <h1>Título de la Obra</h1>
+                <h1>Mesa Dandy</h1>
                 <p class="subtitle">Compañía / Año de estreno</p>
             </div>
         </header>
@@ -47,7 +47,7 @@
 
             <div class="project-top-grid">
                 <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/HpNMPmrNmu0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vjdIwC6L3bk" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
                 <div class="project-synopsis">
@@ -62,12 +62,101 @@
             <section class="gallery-section">
                 <h2>Galería</h2>
                 <div class="gallery-grid">
-                    <img src="./img/mesaDandyMortal1.jpg" alt="Escena 1">
-                    <img src="./img/mesaDandyMortal1.jpg" alt="Escena 2">
-                    <img src="./img/mesaDandyMortal1.jpg" alt="Escena 3">
-                    <img src="./img/mesaDandyMortal1.jpg" alt="Escena 4">
+                    <img src="./img/mesaDandy/md1.jpg" alt="Escena 1" onclick="openModal(); currentSlide(1)" class="hover-shadow">
+                    <img src="./img/mesaDandy/md2.jpg" alt="Escena 2" onclick="openModal(); currentSlide(2)" class="hover-shadow">
+                    <img src="./img/mesaDandy/md3.jpg" alt="Escena 3" onclick="openModal(); currentSlide(3)" class="hover-shadow">
+
+                    <div class="gallery-more-container" onclick="openModal(); currentSlide(4)">
+                        <img src="./img/mesaDandy/md4.jpg" alt="Escena 4">
+                        <div class="more-overlay">
+                            <span>Ver más...</span>
+                        </div>
+                    </div>
                 </div>
             </section>
+
+            <div id="myModal" class="modal">
+                <span class="close cursor" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+
+                    <div class="mySlides">
+                        <div class="numbertext">1 / 18</div>
+                        <img src="./img/mesaDandy/md1.jpg" style="width:100%" alt="Img 1">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">2 / 18</div>
+                        <img src="./img/mesaDandy/md2.jpg" style="width:100%" alt="Img 2">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">3 / 18</div>
+                        <img src="./img/mesaDandy/md3.jpg" style="width:100%" alt="Img 3">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">4 / 18</div>
+                        <img src="./img/mesaDandy/md4.jpg" style="width:100%" alt="Img 4">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">5 / 18</div>
+                        <img src="./img/mesaDandy/md5.jpg" style="width:100%" alt="Img 5">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">6 / 18</div>
+                        <img src="./img/mesaDandy/md6.jpg" style="width:100%" alt="Img 6">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">7 / 18</div>
+                        <img src="./img/mesaDandy/md7.jpg" style="width:100%" alt="Img 7">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">8 / 18</div>
+                        <img src="./img/mesaDandy/md8.jpg" style="width:100%" alt="Img 8">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">9 / 18</div>
+                        <img src="./img/mesaDandy/md9.jpg" style="width:100%" alt="Img 9">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">10 / 18</div>
+                        <img src="./img/mesaDandy/md10.jpg" style="width:100%" alt="Img 10">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">11 / 18</div>
+                        <img src="./img/mesaDandy/md11.jpg" style="width:100%" alt="Img 11">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">12 / 18</div>
+                        <img src="./img/mesaDandy/md12.jpg" style="width:100%" alt="Img 12">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">13 / 18</div>
+                        <img src="./img/mesaDandy/md13.jpg" style="width:100%" alt="Img 13">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">14 / 18</div>
+                        <img src="./img/mesaDandy/md14.jpg" style="width:100%" alt="Img 14">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">15 / 18</div>
+                        <img src="./img/mesaDandy/md15.jpg" style="width:100%" alt="Img 15">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">16 / 18</div>
+                        <img src="./img/mesaDandy/md16.jpg" style="width:100%" alt="Img 16">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">17 / 18</div>
+                        <img src="./img/mesaDandy/md17.jpg" style="width:100%" alt="Img 17">
+                    </div>
+                    <div class="mySlides">
+                        <div class="numbertext">18 / 18</div>
+                        <img src="./img/mesaDandy/md18.jpg" style="width:100%" alt="Img 18">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                </div>
+            </div>
 
             <hr>
 

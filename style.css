@@ -116,7 +116,7 @@ a {
 .hero {
     height: 100vh; /* Ocupa toda la altura de la pantalla */
     /* Aquí debes poner tu foto principal de fondo */
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('./img/mesaDandyMortal1.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.7)), url('./img/mesaDandy/md16.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -483,4 +483,171 @@ footer {
     color: #000000;              /* El texto cambia a negro para leerse bien */
     transform: translateY(-3px); /* El botón "flota" un poquito hacia arriba */
     box-shadow: 0 4px 15px rgba(212, 55, 55, 0.4); /* Un brillo dorado suave abajo */
+}
+/* --- ESTILOS DE GALERÍA CON "VER MÁS" --- */
+
+/* Contenedor de la última foto */
+.gallery-more-container {
+    position: relative;
+    cursor: pointer;
+    height: 250px; /* Misma altura que definimos para las img */
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.gallery-more-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* La capa oscura con el texto */
+.more-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Fondo negro semitransparente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.more-overlay span {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid #D43737FF;
+}
+
+.gallery-more-container:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-more-container:hover .more-overlay {
+    background: rgba(0, 0, 0, 0.4); /* Se aclara un poco al pasar el mouse */
+}
+
+/* --- ESTILOS DEL MODAL (CAROUSEL) MEJORADO --- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Evita scroll doble */
+    background-color: rgba(0, 0, 0, 0.95);
+}
+
+/* El escenario fijo */
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrado perfecto */
+
+    width: 90%;           /* Ancho responsive */
+    max-width: 1200px;    /* Ancho máximo */
+    height: 85vh;         /* ALTURA FIJA: El secreto para que no se mueva */
+
+    background-color: transparent; /* Transparente para que parezca flotar */
+    margin: 0;
+    padding: 0;
+
+    /* Para centrar la imagen dentro del escenario */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Botón cerrar (X) */
+.close {
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2005;
+    line-height: 1; /* Para alinear mejor */
+}
+
+.close:hover {
+    color: #D43737FF;
+}
+
+/* Diapositivas */
+.mySlides {
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+/* La imagen se ajusta al escenario, no al revés */
+.mySlides img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Mantiene la proporción sin deformar */
+}
+
+/* Botones Siguiente / Anterior */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 20px;
+    margin-top: -25px; /* Mitad de la altura del icono */
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.3s ease;
+    border-radius: 3px;
+    user-select: none;
+    z-index: 2002;
+    background-color: rgba(0,0,0,0.3); /* Fondo sutil siempre visible */
+}
+
+.next {
+    right: 0; /* Pegado a la derecha del escenario */
+}
+
+.prev {
+    left: 0; /* Pegado a la izquierda del escenario */
+}
+
+.prev:hover, .next:hover {
+    background-color: #D43737FF;
+    color: #000;
+}
+
+/* Texto de numeración (1/4) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 14px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    border-radius: 0 0 4px 0;
+}
+
+/* Ajuste para móviles: Flechas más pequeñas */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%; /* Pantalla completa en móvil */
+        height: 70vh; /* Un poco menos alto para dejar espacio a controles navegador */
+    }
+    .prev, .next {
+        padding: 10px;
+        font-size: 20px;
+    }
 }
