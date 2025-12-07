@@ -651,3 +651,12 @@ footer {
         font-size: 20px;
     }
 }
+
+.categoriaSidebar{
+    color: #D43737FF;
+}
+
+.estiloBarra{
+    height:0.3%;
+    background-color:#8e2727;
+}
